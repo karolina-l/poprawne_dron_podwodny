@@ -56,7 +56,7 @@ void Dron::zmien_kat(double kat)
 void Dron::zmien_polozenie(const TWektor<double,3> &w)
 {
 
-  double dzielnik=200;
+  double dzielnik=600;
   TWektor<double,3> dod;
   dod=w/dzielnik;
   for(int j=1; j<=dzielnik; j++)
