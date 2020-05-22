@@ -46,7 +46,7 @@ void Dron::zmien_kat(double kat)
     s1.Sruba::zmien_kat(dod);
     //s1.Sruba::obrot_sruby();
     s2.Sruba::zmien_kat(dod);
-    //s2.Sruba::obrot_sruby();
+  //  s2.Sruba::obrot_sruby();
     this->rysuj_ksztalt();
     gnuplot->redraw();
 
@@ -63,8 +63,8 @@ void Dron::zmien_polozenie(const TWektor<double,3> &w)
   {
     s1.Sruba::zmien_polozenie(dod);
     s2.Sruba::zmien_polozenie(dod);
-    //s1.Sruba::obrot_sruby();
-    //s2.Sruba::obrot_sruby();
+    s1.Sruba::obrot_sruby();
+    s2.Sruba::obrot_sruby();
 
     srodek=srodek+dod;
     for(int i=0; i<8; i++)

@@ -8,12 +8,12 @@ using namespace std;
 void Sruba::obrot_sruby() //problemy z dzialaniem
 {
   M_obr obr;
+  obr=obr.utworz_mRx(30);
 
-    obr=obr.utworz_mRx(30);
     for(int j=0; j<12; j++)
     {
       t[j]=t[j]-srodek;
-
+    }
     for(int i=0; i<12; i++)
     {
       t[i]=obr*t[i];
@@ -23,10 +23,10 @@ void Sruba::obrot_sruby() //problemy z dzialaniem
     {
       t[i]=t[i]+srodek;
     }
-}
+
   this->usun();
-  this->Graniastoslup::rysuj_ksztalt();
-  gnuplot->redraw();
+  //this->Graniastoslup::rysuj_ksztalt();
+  //gnuplot->redraw();
 
 }
 

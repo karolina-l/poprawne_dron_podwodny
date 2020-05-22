@@ -40,7 +40,7 @@ M_obr M_obr::utworz_mRz(const double &kat)
   pom[2][0]=0.0;
   pom[2][1]=0.0;
   pom[2][2]=1.0;
-  M_obr nmob(pom); 
+  M_obr nmob(pom);
 
   return nmob;
 }
@@ -57,6 +57,40 @@ M_obr M_obr::utworz_mRz(const double &kat)
     pom[2][0]=0.0;
     pom[2][1]=sin(kat*M_PI/180.0);
     pom[2][2]=cos(kat*M_PI/180.0);
+    M_obr nmob(pom);
+
+    return nmob;
+  }
+
+  M_obr M_obr::utworz_mRy(const double &kat)
+  {
+    TMacierzKw<double,3> pom;
+    pom[0][0]=cos(kat*M_PI/180.0);
+    pom[0][1]=0.0;
+    pom[0][2]=sin(kat*M_PI/180.0);
+    pom[1][0]=0.0;
+    pom[1][1]=1.0;
+    pom[1][2]=0.0;
+    pom[2][0]=sin(kat*M_PI/180.0)*(-1);
+    pom[2][1]=0.0;
+    pom[2][2]=cos(kat*M_PI/180.0);
+    M_obr nmob(pom);
+
+    return nmob;
+  }
+
+  M_obr M_obr::utworz_mRxy(const double &kat)
+  {
+    TMacierzKw<double,3> pom;
+    pom[0][0]=cos(kat*M_PI/180.0);
+    pom[0][1]=sin(kat*M_PI/180.0)*sin(kat*M_PI/180.0);
+    pom[0][2]=sin(kat*M_PI/180.0)*cos(kat*M_PI/180.0);
+    pom[1][0]=0.0;
+    pom[1][1]=cos(kat*M_PI/180.0);
+    pom[1][2]=sin(kat*M_PI/180.0)*(-1);
+    pom[2][0]=sin(kat*M_PI/180.0)*(-1);
+    pom[2][1]=sin(kat*M_PI/180.0)*cos(kat*M_PI/180.0);
+    pom[2][2]=cos(kat*M_PI/180.0)*cos(kat*M_PI/180.0);
     M_obr nmob(pom);
 
     return nmob;

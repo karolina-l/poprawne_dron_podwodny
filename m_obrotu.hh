@@ -36,6 +36,20 @@ public:
   * \return nowy obiekt klasy M_obr
   */
   M_obr utworz_mRx(const double &kat);
+  /*!
+  * \brief metoda tworzaca M_obr z zadanego kata
+  * \param1 double kat - kat, na podstawie ktorego tworzona
+  * jest M_obr
+  * \return nowy obiekt klasy M_obr
+  */
+  M_obr utworz_mRy(const double &kat);
+  /*!
+  * \brief metoda tworzaca M_obr z zadanego kata
+  * \param1 double kat - kat, na podstawie ktorego tworzona
+  * jest M_obr
+  * \return nowy obiekt klasy M_obr
+  */
+  M_obr utworz_mRxy(const double &kat);
 };
 
 
