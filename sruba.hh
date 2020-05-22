@@ -22,6 +22,10 @@ protected:
   * \brief srodek drona (potrzebne do obrotow)
   */
   TWektor<double,3> sr_drona;
+  /*!
+  * \brief kat miedzy srodkiem a osia ox
+  */
+  double kat_ox;
 
 public:
   /*!
@@ -33,7 +37,7 @@ public:
   * \param5 TWektor<double,3> sr_dr - wspolrzedne srodka drona
   * Metoda korzysta z konstruktora klasy Graniastoslup
   */
-  Sruba(drawNS::APIGnuPlot3D*plot, const TWektor<double,3> &sr, const TMacierzKw<double,3> &mat, TWektor<double,3>*w, const TWektor<double,3> &sr_dr): Graniastoslup(plot,sr,mat,w), sr_drona(sr_dr){}
+  Sruba(drawNS::APIGnuPlot3D*plot, const TWektor<double,3> &sr, const TMacierzKw<double,3> &mat, TWektor<double,3>*w, const TWektor<double,3> &sr_dr): Graniastoslup(plot,sr,mat,w), sr_drona(sr_dr), kat_ox(0){}
   /*!
   * \brief wirtualny destruktor klasy Sruba
   */
@@ -52,6 +56,8 @@ public:
   * \brief Metoda pozwalajaca na zmiane kata sruby wzgledem osi OX
   */
   void obrot_sruby();
+
+  void pamietaj_kat(const double &kat);
 
 };
 

@@ -26,6 +26,9 @@ void Dron::zmien_kat(double kat)
   {
     M_obr obr;
     obr=obr.utworz_mRz(dod);
+    s1.Sruba::pamietaj_kat(dod*wycinek);
+    s2.Sruba::pamietaj_kat(dod*wycinek);
+    cout<<"dod: "<<dod*wycinek<<endl;
     for(int i=0; i<8; i++)
     {
       t[i]=t[i]-srodek;
@@ -44,7 +47,7 @@ void Dron::zmien_kat(double kat)
     s2.usun();
     gnuplot->erase_shape(nazwa);
     s1.Sruba::zmien_kat(dod);
-    //s1.Sruba::obrot_sruby();
+    s1.Sruba::obrot_sruby();
     s2.Sruba::zmien_kat(dod);
   //  s2.Sruba::obrot_sruby();
     this->rysuj_ksztalt();

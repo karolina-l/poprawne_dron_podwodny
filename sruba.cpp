@@ -5,14 +5,24 @@
 
 using namespace std;
 
+void Sruba::pamietaj_kat(const double &kat)
+{
+  this->kat_ox=kat;
+}
+
 void Sruba::obrot_sruby() //problemy z dzialaniem
 {
-  M_obr obr;
+  M_obr obr, p_minus, p_plus;
+  double oz;
   obr=obr.utworz_mRx(30);
-
+  oz=this->kat_ox;
+  cout<<"oz: "<<oz<<endl<<endl;
+  p_minus=p_minus.utworz_mRz(-oz);
+  p_plus=p_plus.utworz_mRz(oz);
     for(int j=0; j<12; j++)
     {
       t[j]=t[j]-srodek;
+      t[j]=p_minus*t[j];
     }
     for(int i=0; i<12; i++)
     {
@@ -21,6 +31,7 @@ void Sruba::obrot_sruby() //problemy z dzialaniem
 
     for(int i=0; i<12; i++)
     {
+      t[i]=p_plus*t[i];
       t[i]=t[i]+srodek;
     }
 
