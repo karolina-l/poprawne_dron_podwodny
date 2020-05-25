@@ -28,6 +28,7 @@ using namespace std;
     for(int wycinek=1; wycinek<=dzielnik; wycinek++)
     {
       obr=obr.utworz_mRz(dod);
+      srodek=obr*srodek;
       for(int i=0; i<8; i++)
       {
         t[i]=t[i]-srodek;
@@ -43,7 +44,7 @@ using namespace std;
         t[i]=t[i]+srodek;
       }
 
-      usleep(0.000000001);
+      usleep(0.000001);
 
       gnuplot->erase_shape(nazwa);
       this->rysuj_ksztalt();

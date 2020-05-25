@@ -26,28 +26,23 @@ void Dron::zmien_kat(double kat)
   {
     M_obr obr;
     obr=obr.utworz_mRz(dod);
+    //srodek=obr*srodek;
     s1.Sruba::pamietaj_kat(dod*wycinek);
     s2.Sruba::pamietaj_kat(dod*wycinek);
-    cout<<"dod: "<<dod*wycinek<<endl;
+    //cout<<"dod: "<<dod*wycinek<<endl;
+
     for(int i=0; i<8; i++)
     {
       t[i]=t[i]-srodek;
-    }
-
-    for(int i=0; i<8; i++)
-    {
       t[i]=obr*t[i];
-    }
-
-    for(int i=0; i<8; i++)
-    {
       t[i]=t[i]+srodek;
     }
+
     s1.usun();
     s2.usun();
     gnuplot->erase_shape(nazwa);
     s1.Sruba::zmien_kat(dod);
-    s1.Sruba::obrot_sruby();
+    //s1.Sruba::obrot_sruby();
     s2.Sruba::zmien_kat(dod);
   //  s2.Sruba::obrot_sruby();
     this->rysuj_ksztalt();
@@ -66,14 +61,16 @@ void Dron::zmien_polozenie(const TWektor<double,3> &w)
   {
     s1.Sruba::zmien_polozenie(dod);
     s2.Sruba::zmien_polozenie(dod);
-    s1.Sruba::obrot_sruby();
-    s2.Sruba::obrot_sruby();
+  //  s1.Sruba::obrot_sruby();
+    //s2.Sruba::obrot_sruby();
 
     srodek=srodek+dod;
+
     for(int i=0; i<8; i++)
     {
       t[i]=t[i]+dod;
     }
+
     gnuplot->erase_shape(nazwa);
     this->rysuj_ksztalt();
     gnuplot->redraw();
